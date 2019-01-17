@@ -1,0 +1,43 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "ball of soccer",
+      "category": 1
+    },
+    {
+      "id": 2,
+      "name": "ball of football",
+      "category": 1
+    },
+    {
+      "id": 3,
+      "name": "Shirt",
+      "category": 2
+    },
+    {
+      "id": 4,
+      "name": "Shoes",
+      "category": 2
+    },
+    {
+      "id": 5,
+      "name": "Tennis",
+      "category": 3
+    }
+  ],
+  "categories": [
+    {
+      "name": "Books",
+      "id": 1
+    },
+    {
+      "name": "Notebooks",
+      "id": 2
+    },
+    {
+      "name": "Kitchen",
+      "id": 3
+    }
+  ]
+}
