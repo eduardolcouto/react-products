@@ -28,16 +28,20 @@
   ],
   "categories": [
     {
-      "name": "Books",
-      "id": 1
+      "id": 1,
+      "name": "home1ff2"
     },
     {
-      "name": "Notebooks",
+      "name": "work",
       "id": 2
     },
     {
-      "name": "Kitchen",
+      "name": "laptop",
       "id": 3
+    },
+    {
+      "name": "notebook",
+      "id": 4
     }
   ]
 }

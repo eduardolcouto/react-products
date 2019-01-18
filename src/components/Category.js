@@ -1,40 +1,23 @@
 import React, { Component } from 'react'
-import Api from './Api'
+import 'react-router-dom' 
 
 class Category extends Component{
     
-    constructor(props){
-        super(props)
+    loadData = (id) => {
+        this.props.listProductByCategory(id)
+        this.props.getCategory(id)
 
-        this.loadData = this.loadData.bind(this)
-
-        this.state={
-            category:{},
-            products:[]
-        }
+    /*    const [courses, categories] =  await Promise.all([
+            CourseService.list(),
+            CategoryService.list()
+          ])
+      
+          this.setState({
+            courses,
+            categories
+          })*/
     }
 
-    loadData(id){
-
-        Api.loadCategory(id)
-            .then(res => {
-                this.setState({
-                    category: res.data
-                })
-            })
-        
-        Api.loadProductsByCategory(id)
-            .then(res => {
-                this.setState({
-                    products: res.data
-                })
-            })
-    }
-
-  //  componentWillReceiveProps(newProps){
-   //    this.loadData(newProps.match.params.catId)
-   // }   
-    
     componentDidMount(){
         this.loadData(this.props.match.params.catId)
     }
@@ -56,7 +39,8 @@ class Category extends Component{
     }
 
     render(){
-        const {category, products} = this.state
+        const {category, products} = this.props
+        
         return(
             <div>
                 <h3>{category.name} </h3>
