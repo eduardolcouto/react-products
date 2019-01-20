@@ -42,7 +42,7 @@ class App extends Component {
     deleteCategory = (category) =>{
       const {categoryApi} = this.props
 
-      categoryApi.delete(category.id)
+      categoryApi.remove(category.id)
       .then(res=>{
           this.loadCategories()
       })
@@ -67,10 +67,7 @@ class App extends Component {
 
     saveNewProduct = (product) => {
       const {productApi} = this.props
-      productApi.save(product)
-            .then(res=>{
-                this.loadCategories()
-            })
+      return productApi.save(product)
     }
 
     listProductByCategory = (catId) =>{
@@ -82,6 +79,10 @@ class App extends Component {
                 products: res.data
               })
             })
+    }
+
+    removeProduct = (productId) =>{
+
     }
       
     render() {
@@ -97,8 +98,19 @@ class App extends Component {
                   <li className='nav-item active'>
                     <Link to='/' className='nav-link active'>Home</Link>
                   </li>
-                  <li className='nav-item'>
-                    <Link to='/products' className='nav-link'>Products</Link>
+                  <li className='nav-item dropdown'>
+                    <a className='nav-link dropdown-toggle' 
+                       href="#a"
+                                         id="dropdownProduct"
+                                          role="button"
+                                          data-toggle="dropdown" 
+                                          aria-haspopup="true" 
+                                          aria-expanded="false"
+                                         >Products</a>
+                    <div className="dropdown-menu" aria-labelledby="dropdownProduct">
+                      <Link to={'/products'} className="dropdown-item">Show Products</Link>
+                      <Link to={'/products/new'} className="dropdown-item">Add new Product</Link>
+                    </div>
                   </li>
                   <li className='nav-item'>
                     <Link to='/about' className='nav-link'>About</Link>
