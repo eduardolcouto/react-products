@@ -130,7 +130,10 @@ class Products extends Component{
                                       listProductByCategory={this.props.listProductByCategory}
                                       getCategory={this.props.getCategory}
                                       products={this.props.products}
-                                      category={this.props.category} />
+                                      category={this.props.category}
+                                      deleteProduct={this.props.deleteProduct}
+                                      categories={this.props.categories} 
+                                      editProduct={this.props.editProduct} />
                             )
                         }} />
                         <Route exact path={match.url+'/new'} render={(props) => {

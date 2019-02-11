@@ -16,7 +16,7 @@ export const ProductServices = {
     },
 
     edit(data,id){
-        return ApiServices.put(endpoint,data,id)
+        return ApiServices.update(endpoint,data,id)
     },
 
     remove(id){

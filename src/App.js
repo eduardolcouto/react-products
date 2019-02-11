@@ -81,7 +81,16 @@ class App extends Component {
             })
     }
 
-    removeProduct = (productId) =>{
+    deleteProduct = (productId) =>{
+      const {productApi} = this.props
+
+      return productApi.remove(productId)
+     
+    }
+
+    editProduct = (product) =>{
+      const {productApi} = this.props
+      return productApi.edit(product, product.id)
 
     }
       
@@ -134,6 +143,8 @@ class App extends Component {
                                 saveNewProduct={this.saveNewProduct}
                                 listProductByCategory={this.listProductByCategory}
                                 getCategory={this.getCategory}
+                                deleteProduct={this.deleteProduct}
+                                editProduct={this.editProduct}
 
 
                   />
